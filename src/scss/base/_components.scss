@@ -1,0 +1,69 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.text-center{text-align: center;}
+.btn-primary{
+	background: v.$rojo;
+	color: v.$blanco;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	padding: 1.5rem 2rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	transition: .5s all ease-in-out;
+	border-radius: .5rem;
+
+	&:hover{
+		background-color: v.$azulTenue;
+	}
+}
+
+.btn-verde{
+	background-color: v.$verde;
+	display: inline-block;
+	&:hover{
+		background-color: lighten(v.$verde, 5);
+	}
+}
+
+.boton-rojo{
+	@include m.boton(v.$rojo, block);
+	width: 100%;
+}
+.boton-amarillo{
+	@include m.boton(v.$amarillo, block);
+}
+
+.img-small{width: 20rem;}
+
+.w-100{
+	width: 100%;
+}
+
+html.webp .Banner{
+	background-image: url("../img/banner-house.webp");
+}
+
+html.no-webp .Banner{
+	background-image: url("../img/banner-house.jpg");
+}
+
+.Banner{
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: #FFF;
+	padding: 8rem 0;
+	&-title{
+		font-size: 3rem;
+		font-weight: 500;
+		margin-bottom: 2rem;
+	}
+	&-miga{
+		color: #c7c7c7;
+		font-size: 1.8rem;
+		& a{
+			color: v.$rojo;
+		}
+	}
+}

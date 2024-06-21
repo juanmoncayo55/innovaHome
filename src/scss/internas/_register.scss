@@ -1,0 +1,104 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.register{
+	background-color: v.$azulTenue;
+	margin-bottom: 5rem;
+	padding: 3rem 2rem;
+	border-radius: 1rem;
+	box-shadow: 0px 0px 8px #000000cf;
+	&-contenedor{
+		margin-top: 6rem;
+		margin-bottom: 6rem;
+	}
+	&-title{
+		color: v.$blanco;
+		margin-bottom: 3rem;
+		text-align: center;
+		font-size: 2.5rem;
+		font-weight: 100;
+	}
+	&-form, .sectionTelephono{
+		& > .register-field{
+			margin-bottom: 2rem;
+			& label{
+				color: v.$blanco;
+				font-weight: bold;
+				margin-bottom: .5rem;
+				display: block;
+				font-size: 1.5rem;
+				text-transform: uppercase;
+			}
+			& input, & textarea, & select{
+				display: block;
+				width: 100%;
+				outline: none;
+				border-radius: 1rem;
+				padding: .8rem;
+				font-size: 1.5rem;
+				border:0;
+				&::placeholder{color: rgba(0,0,0,.5);}
+			}
+			& textarea{
+				min-height: 150px;
+				resize: none;
+			}
+			& > input[type=file]{color: v.$blanco}
+		}
+		& .register-radioOption{
+			display: flex;
+			column-gap: 5rem;
+			& div{
+				display: flex;
+				align-items: center;
+				& label{
+					color: #fff;
+					display: block;
+					font-size: 1.5rem;
+					font-weight: 700;
+					margin-bottom: .5rem;
+					width: 110px;
+					text-transform: uppercase;
+				}
+			}
+
+		}
+	}
+
+	&:last-child{margin-bottom: 0;}
+}
+
+.form-login{margin-bottom: 5rem}
+
+.form-submit{
+	border: 0;
+	padding: 1rem 3rem;
+	color: #FFF;
+	background-color: v.$azulTenue;
+	font-weight: bold;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: .3s all ease;
+	&:hover{
+		background-color: lighten(v.$azulTenue, 5);
+	}
+}
+
+.sectionTelephono{
+	margin-top: 5px;
+	&-smallText{
+		color: v.$blanco;
+		font-size: 1.4rem;
+		margin-top: 3rem;
+		margin-bottom: 5px;
+	}
+	& .input-telephono, & .input-email{
+		display: block;
+		width: 100%;
+		outline: none;
+		border-radius: 1rem;
+		padding: .8rem;
+		border:0;
+		&::placeholder{color: rgba(0,0,0,.5);}
+	}
+}

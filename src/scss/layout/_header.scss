@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+@use "base/mixins" as m;
+
+.Header{
+	padding: 3rem 0;
+	position: relative;
+	background-color: v.$blanco;
+	&-contenedor{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include m.tablet2{
+			
+		}
+	}
+	&-logo h1{
+		font-size: 2em;
+		font-weight: bolder;
+		margin: 0;
+		letter-spacing: -1px;
+    	color: v.$azulTenue;
+
+    	//Mobile
+    	@include m.my-mq(350px){
+			font-size: 2.5rem;
+		}
+	}
+	&-call {
+		&__title {
+			color: v.$azulTenue;
+    		font-size: 1.5rem;
+		}
+		& a{
+			color: rgba(v.$negro, 0.40);
+			font-size: 1.6rem;
+		}
+	}
+
+	//Mobile
+	&-btnMobile{
+		display: none;
+		cursor: pointer;
+		@include m.tablet2 {
+			background-color: transparent;
+			border: 1px solid #CCC;
+			display: grid;
+			place-items: center;
+			padding: .5rem 1rem;
+			font-size: 17px;
+			color: #a7a7a7;
+		}
+	}
+
+	@include m.tablet2 {
+		padding: 2rem 0;
+		position: relative;
+	}
+}
+
+.header-alto-mb{
+	height: 350px;
+}
+
+.Header.fijo{
+	box-shadow: .1rem .2rem .3rem #33333347;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	padding:2rem 0;
+}
+body.scroll-fijo{ padding-top: 8.6rem; }

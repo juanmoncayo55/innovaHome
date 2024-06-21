@@ -1,0 +1,68 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+html.webp .Portada {
+	background-image: url(../img/portada.webp);
+}
+
+html.no-webp .Portada {
+	background-image: url(../img/portada.jpg);
+}
+.Portada {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+    height: 100vh;
+
+    &-contenedor{	
+		color: v.$blanco;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+    }
+
+    &-title{
+		font-size: 6rem;
+		text-align: center;
+		text-shadow: -4px 2px 6px #212121ad;
+
+		//Mobile
+		@include m.telefono{
+			font-size: 4.5rem;
+		}
+		@include m.my-mq(350px){
+			font-size: 3rem;
+		}
+    }
+    &-subdetail{
+		color: v.$blanco;
+	    text-align: center;
+		background-color: rgba(v.$negro, 0.43);
+		line-height: 2.5rem;
+		padding: 1rem;
+		font-size: 1.7rem;
+    }
+	&-link{
+		background: v.$rojo;
+		color: v.$blanco;
+		font-size: 1.4rem;
+		letter-spacing: 1px;
+		padding: 1.5rem 2rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		transition: .5s all ease-in-out;
+		border-radius: .5rem;
+
+		&:hover{
+			background-color: v.$azulTenue;
+		}
+	}
+}
+
+.anch-portada{
+	margin: 0 auto;
+    max-width: 700px;
+}

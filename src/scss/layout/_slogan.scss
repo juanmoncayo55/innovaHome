@@ -1,0 +1,48 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.Slogan{
+	padding: 2.5rem 0;
+	background-color: v.$azulTenue;
+
+	&-contenedor{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: v.$blanco;
+		width: 97%;
+		max-width: 100rem;
+		margin: 0 auto;
+		@include m.tablet{
+			flex-direction: column;
+			row-gap: 2rem;
+		}
+	}
+
+	&__right{
+		&-title{
+			font-weight: normal;
+			font-size: 2.3rem;
+		}
+		& p {
+			color: rgba(v.$blanco, 0.58);
+			font-size: 1.5rem;
+			margin-top: .8rem;
+		}
+	}
+
+	&__link {
+		border: 2px solid #fff;
+		border-radius: .5rem;
+	    color: white;
+	    padding: 1rem 2rem;
+	    text-transform: uppercase;
+	    font-size: 1.4rem;
+	    transition: .4s all ease-in-out;
+
+	    &:hover{
+	    	color: v.$azulTenue;
+	    	background-color: v.$blanco;
+	    }
+	}
+}

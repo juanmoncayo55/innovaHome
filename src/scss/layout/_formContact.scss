@@ -1,0 +1,119 @@
+@use "base/variables" as v;
+
+.Form-contact{
+	background-color: v.$azulTenue;
+	padding: 8rem 0;
+	&-contenedor{
+		color: v.$blanco;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	    column-gap: 10rem;
+    	row-gap: 5rem;
+	}
+
+	&__left{
+		flex: 65%;
+
+		&-title{
+			font-size: 3rem;
+			position: relative;
+			padding: 1rem 0;
+			font-weight: bold;
+			color: v.$blanco;
+			border-bottom: 1px solid #ffffff17;
+			flex: 100%;
+			margin-bottom: 2rem;
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				border: 2px solid v.$rojo;
+				width: 60px;
+			}
+		}
+		&-subtitle{
+			color: #ffffffa6;
+			font-size: 1.5rem;
+		}
+		&-form{
+			display: flex;
+			justify-content: space-between;
+			column-gap: 4rem;
+			flex-wrap: wrap;
+			row-gap: 1.5rem;
+			margin-top: 5rem;
+			& input, & textarea, & :not(input[type=submit]){
+				font-size: 1.6rem;
+				outline: none;
+				padding: .8rem 1rem;
+			}
+			& .name-input, & .email-input{
+				flex: 25%;
+			}
+			& .message-input{
+				flex: 100%;
+				min-height: 130px;
+				resize: none;
+			}
+			& input[type="submit"]{
+				margin-top: 2rem;
+				border: 2px solid #fff;
+				border-radius: .5rem;
+				color: #fff;
+				font-size: 1.4rem;
+				padding: 1rem 2rem;
+				text-transform: uppercase;
+				background: transparent;
+			}
+		}
+	}
+	&__right{
+		flex: 20%;
+
+		&-title{
+			font-size: 1.8rem;
+			position: relative;
+			padding: 1rem 0;
+			color: v.$blanco;
+			border-bottom: 1px solid #ffffff17;
+			flex: .15;
+			margin-bottom: 2rem;
+			margin-top: 1.5rem;
+		}
+
+		&-information {
+			max-width: 200px;
+			margin-top: 6rem;
+		}
+		&-info{
+			font-size: 1.5rem;
+			color: #FFF;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			margin-bottom: 3rem;
+
+			& span { color: #fff9; }
+		}
+	}
+	&__bottom{
+		flex: 100%;
+		border-top: 1px solid hsla(0, 0%, 100%, .09);
+		padding-top: 6rem;
+		display: flex;
+		justify-content: center;
+		column-gap: 5rem;
+		& a {
+			& i{
+				color: rgba(v.$blanco, 0.5);
+				font-size: 2.5rem;
+				transition: .3s color ease-in-out;
+			}
+			&:hover i{
+				color: v.$blanco;
+			}
+		}
+	}
+}

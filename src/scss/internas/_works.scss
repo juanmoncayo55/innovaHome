@@ -1,0 +1,11 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+html.webp .Banner{
+	background-image: url("../img/banner-house.webp");
+}
+
+html.no-webp .Banner{
+	background-image: url("../img/banner-house.jpg");
+}
+

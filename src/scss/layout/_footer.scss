@@ -1,0 +1,17 @@
+@use "base/variables" as v;
+
+.Footer{
+	background-color: v.$grisClaro;
+	padding: 3rem 0;
+	margin-top: 2rem;
+
+	& p{
+		text-align: center;
+		font-size: 1.5rem;
+		color: rgba(v.$negro, 0.65);
+		& a{
+			color: v.$azulTenue;
+    		text-decoration: underline;
+		}
+	}
+}

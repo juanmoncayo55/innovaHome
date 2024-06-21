@@ -1,0 +1,83 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.Wware {
+	background-color: v.$grisClaro;
+	padding: 12rem 0;
+	&-contenedor {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 8rem;
+
+		@include m.tablet2{
+			flex-direction: column;
+		}
+	}
+
+	&-left {
+		flex: .7;
+		& picture{
+		    border: 15px solid #FFF;
+    		box-shadow: 3px 3px 10px #dddddd;
+    		transition: .4s transform linear;
+    		&:hover{
+    			transform: rotateZ(-5deg);
+    		}
+
+			@include m.tablet2{
+				max-width: 480px;
+				margin: 0 auto;
+				margin-bottom: 2rem;
+			}
+		}
+	}
+	&-right{
+		flex: .8;
+
+		&__title{
+			font-size: 3rem;
+			position: relative;
+			padding: 1rem 0;
+			font-weight: bold;
+			color: v.$negro2;
+			border-bottom: 1px solid v.$blancoTenue;
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				border: 2px solid v.$rojo;
+				width: 60px;
+			}
+		}
+		&__description{
+			font-size: 1.6rem;
+			margin: 3rem 0;
+			line-height: 2.1rem;
+		}
+		&__titleItems{
+			font-size: 2.7rem;
+			font-weight: bold;
+			color: v.$negro2;
+			margin-bottom: 3rem;
+		}
+		&__bottom{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			row-gap: .7rem;
+
+			//Mobile
+			@include m.telefono{
+				grid-template-columns: 1fr;
+				row-gap: 1rem;
+			}
+			&-li{
+				list-style: none;
+				& i {
+					color: v.$azulTenue;
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+}

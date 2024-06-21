@@ -1,0 +1,69 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.Testimonials {
+	padding: 8rem 0;
+	&-contenedor{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 6rem;
+
+		@include m.tablet{
+			gap: 3rem;
+		}
+	}
+
+	&__title{
+		font-size: 3rem;
+		position: relative;
+		padding: 1rem 0;
+		font-weight: bold;
+		color: v.$negro2;
+		border-bottom: 1px solid v.$blancoTenue;
+		flex: 100%;
+		margin-bottom: 3rem;
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border: 2px solid v.$rojo;
+			width: 60px;
+		}
+	}
+
+	&__comment{
+		display: flex;
+		flex: 25%;
+		flex-wrap: wrap;
+		column-gap: 1.5rem;
+
+		& picture{
+			width: 64px;
+			height: 64px;
+			display: block;
+		}
+		&-text{
+			font-size: 1.4rem;
+			font-style: italic;
+			flex: 1;
+			line-height: 1.8rem;
+			color: #707070;
+
+			& span{
+				display: block;
+				margin-top: 1.5rem;
+				font-style: normal;
+				font-weight: bold;
+			}
+		}
+
+		@include m.my-mq(980px){
+    		flex: 40%;
+		}
+		@include m.tablet{
+			flex: 100%;
+		}
+	}
+}

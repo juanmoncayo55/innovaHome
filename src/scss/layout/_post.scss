@@ -1,0 +1,84 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.Post-blog {
+	padding:8rem 0;
+	background-color: v.$grisClaro;
+	&-contenedor{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4rem;
+
+		//Mobile
+		@include m.desktop{
+			flex-direction: column;
+		}
+	}
+	&__title{
+		font-size: 3rem;
+		position: relative;
+		padding: 1rem 0;
+		font-weight: bold;
+		color: v.$negro2;
+		border-bottom: 1px solid v.$blancoTenue;
+		flex: 100%;
+		margin-bottom: 3rem;
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			border: 2px solid v.$rojo;
+			width: 60px;
+		}
+	}
+	&__item{
+	    flex: 40%;
+	    display: flex;
+	    align-items: stretch;
+	    column-gap: 2rem;
+	    transition: .3s all ease-in-out;
+	    &:hover{
+	    	background-color: v.$blanco;
+	    	box-shadow: 3px 3px 8px #cccccc38;
+	    }
+		&-img{
+			flex: .4;
+			& img{
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&-details{
+			flex: 1;
+			padding: 1rem 0;
+			&__title{
+				font-size: 2.3rem;
+				font-weight: 100;
+			}
+			&__created{
+					font-size: 1.4rem;
+					margin: 1rem 0;
+				& span{
+					color: #3F51B5;
+					font-weight: bold;
+				}
+			}
+			&__descript{
+				font-size: 1.5rem;
+			}
+		}
+
+		//Mobile
+		@include m.desktop{
+			min-width: 150px;
+		}
+	}
+
+	&__btnContainer{
+		display: flex;
+		justify-content: center;
+		margin-top: 3rem;
+		width: 100%;
+	}
+}
